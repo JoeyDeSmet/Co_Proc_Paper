@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1761667429.50492 "/home/joey/Documents/School/Comp_Arch/comp_arch_paper/paper.tex" "paper.pdf" "paper" 1761667430.1331 0
-  "/home/joey/Documents/School/Comp_Arch/comp_arch_paper/paper.tex" 1761667429.33669 9361 97c2310a6d837094c5f95e15bd9d1425 ""
+["pdflatex"] 1761742794.27116 "/home/joey/Documents/School/Comp_Arch/comp_arch_paper/paper.tex" "paper.pdf" "paper" 1761742794.89267 0
+  "/home/joey/Documents/School/Comp_Arch/comp_arch_paper/paper.tex" 1761742794.09349 9380 74755d30e08f1888b461f7c58235ff12 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1755987285 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1755987285 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1755987285 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -106,9 +106,9 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1761588231 5311557 9da84c45f5b388655502706482323571 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1761588229 2008252 1c7f1e26afba80d1be37a825cfe423f8 ""
   "images/Interconnect_architecture.png" 1761591079.39338 46160 02f690f52b389b865d726d3c691df5f7 ""
-  "paper.aux" 1761667430.07181 3022 743471f224cb265e693f2a644568d9ca "pdflatex"
-  "paper.out" 1761667430.07181 1515 7518dbd2686eef230c99f5faed4b5a9b "pdflatex"
-  "paper.tex" 1761667429.33669 9361 97c2310a6d837094c5f95e15bd9d1425 ""
+  "paper.aux" 1761742794.84425 3022 743471f224cb265e693f2a644568d9ca "pdflatex"
+  "paper.out" 1761742794.84525 1515 7518dbd2686eef230c99f5faed4b5a9b "pdflatex"
+  "paper.tex" 1761742794.09349 9380 74755d30e08f1888b461f7c58235ff12 ""
   (generated)
   "paper.aux"
   "paper.log"
