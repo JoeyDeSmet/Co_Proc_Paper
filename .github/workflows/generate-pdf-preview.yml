@@ -1,0 +1,59 @@
+name: Generate PDF Preview Images
+
+
+
+on:
+  push:
+    paths:
+      - 'paper.pdf'
+  pull_request:
+    paths:
+      - 'paper.pdf'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: 🛎️ Checkout repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true  # so we can push back
+
+      - name: ⚙️ Install poppler-utils
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
+      - name: 📄 Convert PDF → PNG
+        run: |
+          mkdir -p docs/pdf-images
+          # pages become docs/pdf-images/page-1.png, page-2.png, …
+          pdftoppm paper.pdf docs/pdf-images/page -png
+
+      - name: 🔧 Update README.md with new image links
+        run: |
+          # Collect all generated images into a single markdown string
+          images_md=$(for img in docs/pdf-images/page-*.png; do
+            echo "![Page]($img)"
+          done | tr '\n' '\n')
+
+          # Use AWK to replace between markers
+          awk -v start="<!-- PDF_PREVIEW_START -->" \
+              -v end="<!-- PDF_PREVIEW_END -->" \
+              -v imgs="$images_md" '
+            $0 == start { print; print imgs; inblock=1; next }
+            $0 == end   { inblock=0; print; next }
+            !inblock    { print }
+          ' README.md > README.tmp.md
+
+          mv README.tmp.md README.md
+
+      - name: 💾 Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/pdf-images README.md
+          git diff --cached --quiet || git commit -m "chore: update PDF preview images"
+          git push origin HEAD:${{ github.ref_name }}
