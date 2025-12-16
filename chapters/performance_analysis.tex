@@ -1,0 +1,102 @@
+\section{Performance Analysis}
+
+In this section, we evaluate the performance of the proposed convolution co-processor. Metrics include processing throughput, latency, resource utilization, and energy efficiency. Comparisons are made with a reference CPU-only implementation on the ZYNQ7000 processing system.
+
+\subsection{Experimental Setup}
+The experiments were performed on a Digilent ZedBoard development board with the following specifications:
+
+\begin{itemize}[noitemsep]
+  \item Processing System: Dual-core ARM Cortex-A9, 667 MHz
+  \item FPGA: XC7Z020 (Artix-7), 53k LUTs, 106k FFs, 4.9 Mb BRAM
+  \item Clock frequency of co-processor: \SI{100}{\MHz}
+  \item Test images: resolution $640 \times 480$, 32-bit RGBA
+  \item Convolution kernel: $3\times3$
+\end{itemize}
+
+\subsection{Latency and Throughput}
+
+The latency $T_\text{latency}$ of the co-processor is measured as the time between issuing a convolution request and receiving the processed data:
+\begin{equation}
+T_\text{latency} = T_\text{transfer} + T_\text{compute} + T_\text{response}
+\end{equation}
+
+Throughput $R_\text{throughput}$ is calculated as:
+\begin{equation}
+R_\text{throughput} = \frac{\text{Number of pixels processed}}{T_\text{latency}}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{Latency and throughput for processing new versus in-memory images}
+\begin{tabular}{c c c}
+\hline
+In memory & Latency [ms] & Throughput [MPix/s] \\
+\hline
+No & -- & -- \\
+Yes & -- & -- \\
+\hline
+\end{tabular}
+\label{tab:latency-throughput}
+\end{table}
+
+\subsection{Resource Utilization}
+
+The FPGA resource usage of the convolution co-processor is summarized in Table~\ref{tab:resource-util}:
+
+\begin{table}[H]
+\centering
+\caption{FPGA Resource Utilization}
+\begin{tabular}{l c c}
+\hline
+Resource & Used & Available \\
+\hline
+LUTs & -- & -- \\
+Flip-Flops & -- & -- \\
+BRAM [Kb] & -- & -- \\
+DSP Slices & -- & -- \\
+\hline
+\end{tabular}
+\label{tab:resource-util}
+\end{table}
+
+\subsection{Comparison with CPU Implementation}
+
+For reference, a CPU-only implementation, as a FreeRTOS task with highest priority, was run on the ARM Cortex-A9 core. Table~\ref{tab:cpu-vs-fpga} summarizes the speed-up achieved:
+
+\begin{table}[H]
+\centering
+\caption{Speed-Up of FPGA Co-Processor vs CPU}
+\begin{tabular}{c c}
+\hline
+CPU Latency [ms] & FPGA Speed-Up \\
+\hline
+-- & -- \\
+\hline
+\end{tabular}
+\label{tab:cpu-vs-fpga}
+\end{table}
+
+% If possible and if we have time enough
+\subsection{Energy Efficiency}
+
+Energy consumption was measured for the convolution co-processor using onboard power monitoring or external measurement tools. The energy efficiency $\eta$ is defined as the number of pixels processed per joule of energy consumed:
+
+\begin{equation}
+\eta = \frac{\text{Number of pixels processed}}{E_\text{total}} \quad [\text{MPixels/J}]
+\end{equation}
+
+where $E_\text{total}$ is the total energy consumed during the convolution operation.
+
+\begin{table}[H]
+\centering
+\caption{Energy efficiency of the co-processor for CPU and FPGA}
+\begin{tabular}{c c c}
+\hline
+Platform & Energy [mJ] & Efficiency [MPix/J] \\
+\hline
+$FPGA$ & -- & -- \\
+$CPU$ & -- & -- \\
+\hline
+\end{tabular}
+\label{tab:energy-efficiency}
+\end{table}
