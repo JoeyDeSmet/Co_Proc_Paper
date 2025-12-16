@@ -1,7 +1,44 @@
 \section{Implementation}
 
+\subsection{High level overview}
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.45\textwidth]{images/Interconnect_architecture.png}
 \caption{Overview interconnect architecture}\label{fig:firmware-system}
+\end{figure}
+
+\subsection{Convolution unit}
+
+The convolution unit is the heart of our system. It loads pixels into its buffer, and calculates the result of each pixel when the buffers are full enough. The system is shown in \Cref{fig:convolution_unit_mcu}.
+
+Some kernels require fractional coefficients. This is implemented as a bit shift at the end of the calculation. This is not a catch-all solution, as only divisions by $2^n$ can be constructed, but it's much easier to implement and faster than using fixed-point or floating-point arithmetic.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{images/convolution_unit_mcu.png}
+    \caption{Convolution unit schematic}
+    \label{fig:convolution_unit_mcu}
+\end{figure}
+
+The convolution unit contains three buffers, each 640 pixels in length. A pixel is shifted into the lower buffer each clock cycle. When the buffer is full, ejected bits are inserted into the middle buffer. When the middle buffer is full, the pixels are shifted into the upper buffer. This nicely arranges the pixels, allowing the module to ingest pixels from three image rows simultaneously.
+
+To further increase speed, the convolution process is pipelined.
+
+\begin{enumerate}
+    \item Stage 1: Calculate $P_1 c_1$, $P_2 c_2$, $P_3 c_3$ in parallel
+    \item Stage 2: Calculate $P_1 c_1 + P_2 c_2$
+    \item Stage 3: Calculate $P_1 c_1 + P_2 c_2 + P_3 c_3$
+    \item Stage 4: Calculate $(P_1 c_1 + P_2 c_2 + P_3 c_3) >> s$
+\end{enumerate}
+
+\subsection{Effect of block size}
+
+To calculate the convolution of a block of size $n$ by $n$ pixels, we need the surrounding pixels as well, as shown in \Cref{fig:pixel_block_size}. The efficiency, is given by $\eta = \frac{n^2}{(n+1)^2}$. For low block sizes, there are a lot of pixels that overlap between adjacent blocks, resulting in wasted re-fetching. However, larger block sizes mean less parallelism, resulting in a slower system.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.15\textwidth]{images/screenshot_pixel_block_size.png}
+    \caption{Pixels to calculate (blue) and apron (grey)}
+    \label{fig:pixel_block_size}
 \end{figure}

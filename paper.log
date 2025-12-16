@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.12.8)  16 DEC 2025 10:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2025.12.8)  16 DEC 2025 23:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -404,8 +404,21 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \extratabsurround=\skip61
 \backup@length=\skip62
 \ar@cellbox=\box67
-))
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 100.
+)) (/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+)
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 101.
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count301
@@ -417,24 +430,24 @@ LaTeX Warning: Label `ZedBoard User's Guide' multiply defined.
 )
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
 
 -- Lines per column: 59 (approximate, difference = 9.00946pt).
 *geometry* driver: auto-detecting
@@ -471,21 +484,21 @@ LaTeX Font Info:    ... okay on input line 100.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 100.
-Package microtype Info: Applying patch `item' on input line 100.
-Package microtype Info: Applying patch `toc' on input line 100.
+LaTeX Info: Redefining \microtypecontext on input line 101.
+Package microtype Info: Applying patch `item' on input line 101.
+Package microtype Info: Applying patch `toc' on input line 101.
 
-Package microtype Warning: Unable to apply patch `eqnum' on input line 100.
+Package microtype Warning: Unable to apply patch `eqnum' on input line 101.
 
-Package microtype Info: Applying patch `footnote' on input line 100.
-Package microtype Info: Applying patch `verbatim' on input line 100.
+Package microtype Info: Applying patch `footnote' on input line 101.
+Package microtype Info: Applying patch `verbatim' on input line 101.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 100.
+LaTeX Info: Redefining \showhyphens on input line 101.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -515,7 +528,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 100.
+Package hyperref Info: Link coloring OFF on input line 101.
  (./paper.out) (./paper.out)
 \@outlinefile=\write3
 \openout3 = `paper.out'.
@@ -529,39 +542,50 @@ Package color Info: Driver file: pdftex.def on input line 149.
  (/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 100.
- (./chapters/abstract.tex) (./chapters/intro.tex) (./chapters/implementation.tex
-<images/Interconnect_architecture.png, id=47, 1082.0425pt x 665.48625pt>
-File: images/Interconnect_architecture.png Graphic file (type png)
-<use images/Interconnect_architecture.png>
-Package pdftex.def Info: images/Interconnect_architecture.png  used on input line 5.
-(pdftex.def)             Requested size: 224.06393pt x 137.80656pt.
-) (./chapters/performance_analysis.tex (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 101.
+ (./chapters/abstract.tex) (./chapters/intro.tex (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 9.
+(Font)              <9> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 9.
+(Font)              <6> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 9.
+(Font)              <5> on input line 5.
+) (./chapters/implementation.tex
+<images/Interconnect_architecture.png, id=59, 1082.0425pt x 665.48625pt>
+File: images/Interconnect_architecture.png Graphic file (type png)
+<use images/Interconnect_architecture.png>
+Package pdftex.def Info: images/Interconnect_architecture.png  used on input line 7.
+(pdftex.def)             Requested size: 224.06393pt x 137.80656pt.
+<images/convolution_unit_mcu.png, id=62, 1122.44344pt x 415.5525pt>
+File: images/convolution_unit_mcu.png Graphic file (type png)
+<use images/convolution_unit_mcu.png>
+Package pdftex.def Info: images/convolution_unit_mcu.png  used on input line 19.
+(pdftex.def)             Requested size: 224.06393pt x 82.9505pt.
+<images/screenshot_pixel_block_size.png, id=64, 343.2825pt x 413.29407pt>
+File: images/screenshot_pixel_block_size.png Graphic file (type png)
+<use images/screenshot_pixel_block_size.png>
+Package pdftex.def Info: images/screenshot_pixel_block_size.png  used on input line 41.
+(pdftex.def)             Requested size: 74.68544pt x 89.91595pt.
+) (./chapters/performance_analysis.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}
+
+
+ <./images/Interconnect_architecture.png> <./images/convolution_unit_mcu.png> <./images/screenshot_pixel_block_size.png>]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 31.
-) (./chapters/conclusion.tex) (./chapters/future_work.tex) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}
-
-
- <./images/Interconnect_architecture.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 126--130
+) (./chapters/conclusion.tex) (./chapters/future_work.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 127--131
 []\T1/ptm/m/n/8 (+20) Digilent, \T1/ptm/m/it/8 (+20) Zed-Board User's Guide\T1/ptm/m/n/8 (+20) , 2014. Avail-able:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--130
+Underfull \hbox (badness 10000) in paragraph at lines 127--131
 []$\T1/ptm/m/n/8 (+20) https : / / ^^\les . digilent . com / resources / programmable-[]logic / zedboard /
  []
 
 
-Underfull \hbox (badness 5817) in paragraph at lines 138--142
+Underfull \hbox (badness 5817) in paragraph at lines 139--143
 []\T1/ptm/m/n/8 (+20) AMD, \T1/ptm/m/it/8 (+20) Zynq 7000 SoC Tech-ni-cal Ref-er-ence Man-ual\T1/ptm/m/n/8 (+20) , 2023.
  []
 
@@ -580,29 +604,27 @@ Before submitting the final camera ready copy, remember to:
 pdfTeX warning (ext4): destination with the same identifier (name{cite.ZedBoard\040User's\040Guide}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.145 \end{document}
-                    
-
-] (./paper.aux)
+l.146 \end{document}
+                    ] (./paper.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 7518DBD2686EEF230C99F5FAED4B5A9B;1515.
+(rerunfilecheck)             Checksum: C4379F6891358FA9D1FBFBBF32A61515;1982.
  ) 
 Here is how much of TeX's memory you used:
- 18002 strings out of 476041
- 351123 string characters out of 5793174
- 1882388 words of memory out of 6000000
- 38104 multiletter control sequences out of 15000+600000
- 630298 words of font info for 206 fonts, out of 8000000 for 9000
+ 19726 strings out of 476041
+ 390486 string characters out of 5793174
+ 1876388 words of memory out of 6000000
+ 39789 multiletter control sequences out of 15000+600000
+ 631338 words of font info for 222 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 75i,9n,78p,1075b,894s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (2 pages, 136864 bytes).
+ 75i,9n,78p,1075b,1060s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on paper.pdf (2 pages, 269966 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 51294 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 169 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
+ 51328 words of extra memory for PDF output out of 51595 (max. 10000000)
 
