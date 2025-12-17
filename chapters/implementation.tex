@@ -32,9 +32,11 @@ To further increase speed, the convolution process is pipelined.
     \item Stage 4: Calculate $(P_1 c_1 + P_2 c_2 + P_3 c_3) >> s$
 \end{enumerate}
 
+The convolution unit RTL module exposes inputs for the kernel coefficients, and the bit shift that is applied after the convolution step. This makes the kernel configurable at runtime.
+
 \subsection{Effect of block size}
 
-To calculate the convolution of a block of size $n$ by $n$ pixels, we need the surrounding pixels as well, as shown in \Cref{fig:pixel_block_size}. The efficiency, is given by $\eta = \frac{n^2}{(n+1)^2}$. For low block sizes, there are a lot of pixels that overlap between adjacent blocks, resulting in wasted re-fetching. However, larger block sizes mean less parallelism, resulting in a slower system.
+To calculate the convolution of a block of size $n$ by $n$ pixels, we need the surrounding pixels as well, as shown in \Cref{fig:pixel_block_size}. To calculate the convolution for the $n^2$ pixels, we need to fetch $(n+2)^2$ pixels, making the efficiency $\eta = \frac{n^2}{(n+1)^2}$. For low block sizes, there are a lot of pixels that overlap between adjacent blocks, resulting in wasted re-fetching. However, larger block sizes mean less parallelism, resulting in a slower system.
 
 \begin{figure}[H]
     \centering

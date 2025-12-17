@@ -15,6 +15,26 @@ The experiments were performed on a Digilent ZedBoard development board with the
 
 \subsection{Latency and Throughput}
 
+For this performance analysis, we'll compare the co-processor speed to a naïve sequential algorithm on a CPU. This algorithm is shown in \Cref{lst:convolution_sequential}.
+
+\begin{lstlisting}[language=Python,label=lst:convolution_sequential]
+  for y from 1 to H-2:
+    for x from 1 to W-2:
+      acc = 0
+      # Convolute current pixel with kernel
+      for ky from -1 to +1:
+        for kx from -1 to +1:
+          acc += img[y + ky][x + kx] \
+            * K[ky + 1][kx + 1]
+      out[y][x] = acc
+\end{lstlisting}
+
+In the naïve implementation, we need 9 multiplications and 9 additions per pixel. Taking one cycle per addition, one cycle per multiplication, and 10 to 15 cycles for the loop logic and memory, we need about 28 to 33 cycles/pixel in the sequential example.
+
+In our parallel implementation, we have an initial three line buffers that need to be filled first (taking 640 cycles each), and an additional three cycles to load the needed data into the convolution unit. After this first delay, we can process pixels at a rate of 1 cycle/pixel.
+
+Processing the image by splitting it into four quadrants, we get an additional speedup of 4x. % Or 400\%? But just saying "400\%" is ambiguous: is it x*400% or x+400%*x?
+
 The latency $T_\text{latency}$ of the co-processor is measured as the time between issuing a convolution request and receiving the processed data:
 \begin{equation}
 T_\text{latency} = T_\text{transfer} + T_\text{compute} + T_\text{response}
@@ -41,19 +61,28 @@ Yes & -- & -- \\
 
 \subsection{Resource Utilization}
 
-The FPGA resource usage of the convolution co-processor is summarized in Table~\ref{tab:resource-util}:
+% The FPGA resource usage of the convolution co-processor is summarized in Table~\ref{tab:resource-util}:
+
+For a single convolution unit (which consists of three line buffers of 640 pixels depth, and a processor unit), the estimated resource utilization of the synthesized design is summarized in \Cref{tab:resource-util}.
 
 \begin{table}[H]
 \centering
 \caption{FPGA Resource Utilization}
 \begin{tabular}{l c c}
 \hline
-Resource & Used & Available \\
+% Resource & Used & Available \\
+Resource & Used (\%) \\
 \hline
-LUTs & -- & -- \\
-Flip-Flops & -- & -- \\
-BRAM [Kb] & -- & -- \\
-DSP Slices & -- & -- \\
+% LUTs & -- & -- \\
+% Flip-Flops & -- & -- \\
+% BRAM [Kb] & -- & -- \\
+% DSP Slices & -- & -- \\
+LUTs & 4 \\
+Flip-Flops & 1 \\
+% BRAM [Kb] & -- \\
+% DSP Slices & -- \\
+BUFG & 3 \\
+LUTRAM & 8 \\
 \hline
 \end{tabular}
 \label{tab:resource-util}
