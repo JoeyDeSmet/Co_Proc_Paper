@@ -35,6 +35,14 @@ In our parallel implementation, we have an initial three line buffers that need 
 
 Processing the image by splitting it into four quadrants, we get an additional speedup of 4x. % Or 400\%? But just saying "400\%" is ambiguous: is it x*400% or x+400%*x?
 
+TODO: how did you get to 112x speedup?
+
+However, the speedup is limited by the speed of AXI.
+
+\begin{equation}
+  T_{AXI} = 2 \cdot \frac{N_{pixels}}{\mathrm{pixels\_per\_AXI\_cycle} \cdot f_{AXI}}
+\end{equation}
+
 The latency $T_\text{latency}$ of the co-processor is measured as the time between issuing a convolution request and receiving the processed data:
 \begin{equation}
 T_\text{latency} = T_\text{transfer} + T_\text{compute} + T_\text{response}
