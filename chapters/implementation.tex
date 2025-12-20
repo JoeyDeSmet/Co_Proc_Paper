@@ -8,6 +8,12 @@
 \caption{Overview interconnect architecture}\label{fig:firmware-system}
 \end{figure}
 
+A high level overview is given in \Cref{fig:firmware-system}. The system contains four main parts: the MCU, the co-processor, video output and the AXI bus to connect everything together.
+
+The MCU contains data for the image to be processed, inside DDR3 RAM. It splits the image data into four quadrants, and sends the corresponding pixels for each quadrant to the co-processor via AXI.
+
+The processed image is sent from the co-processor to the MCU via AXI. The MCU then sends it to the video pipeline to display the image.
+
 \subsection{Convolution unit}
 
 The convolution unit is the heart of our system. It loads pixels into its buffer, and calculates the result of each pixel when the buffers are full enough. The system is shown in \Cref{fig:convolution_unit_mcu}.

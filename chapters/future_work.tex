@@ -2,5 +2,6 @@
 
 \begin{itemize}[noitemsep]
   \item Splitting the data into the different buffers to allow for more parallelism, is now managed by the processor. A hardware implementation could make it possible for data to be streamed in bigger burst which would decrease te delay for data transfer.
-  \item Currently only $3\times3$ kernels are supported some minor changes could be done to expand this to a $n\times n $ kernel. 
+  \item Currently only $3\times3$ kernels are supported some minor changes could be done to expand this to a $n\times n $ kernel.
+  \item The image is sent to the co-processor via AXI. However, a direct connection to the processors DDR3 RAM would be much faster.
 \end{itemize}
