@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1766313438.59141 "/home/joey/Documents/School/Comp_Arch/comp_arch_paper/paper.tex" "paper.pdf" "paper" 1766313440.14031 0
+["pdflatex"] 1766315469.51968 "/home/joey/Documents/School/Comp_Arch/comp_arch_paper/paper.tex" "paper.pdf" "paper" 1766315470.84051 0
   "/home/joey/Documents/School/Comp_Arch/comp_arch_paper/paper.tex" 1766312817.51299 4845 a44fd29a94fd3f394ac7536931f0c0c1 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1755987285 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1755987285 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -118,16 +118,17 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1763983898 5311557 9da84c45f5b388655502706482323571 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1763983821 2008250 292afc1da69c6874213549e901551b65 ""
   "chapters/abstract.tex" 1766312817.50505 200 fbda68c51f6fa62c5322a2afebeec028 ""
-  "chapters/conclusion.tex" 1766312817.50576 215 ffae98a180a3a8dad1356098621a4aba ""
+  "chapters/conclusion.tex" 1766313722.81706 394 ccf47d1bb496c5f0385ad20bc95842be ""
   "chapters/future_work.tex" 1766312817.50576 582 78bf4ffd897ac38bd130526ba4a95c60 ""
-  "chapters/implementation.tex" 1766312817.50604 3181 dbf442388a6e94e7fd6790079ea23e9a ""
+  "chapters/implementation.tex" 1766315469.28775 5873 b94af380f2b3ec7b5ea213340c7bd21b ""
   "chapters/intro.tex" 1766312817.50604 1144 2aa7ca102a859c6a8d656065c6be4e88 ""
   "chapters/performance_analysis.tex" 1766313436.8077 5337 306c3e59dfcb37551ebfdf631a103ad6 ""
   "images/Interconnect_architecture.png" 1761591079.39338 46160 02f690f52b389b865d726d3c691df5f7 ""
+  "images/Video_pipeline_architecture.png" 1761591378.86062 72445 b6d3c09b93b54fbe882cf231bbb09841 ""
   "images/convolution_unit_mcu.png" 1766312817.511 102159 84be3001e241b2f60524794cc988c3aa ""
   "images/screenshot_pixel_block_size.png" 1766312817.511 17823 218c9af633677098ea8d173804baef37 ""
-  "paper.aux" 1766313440.04871 4608 13f8343fd2aa51979818ded4976cec0d "pdflatex"
-  "paper.out" 1766313440.04971 1982 c4379f6891358fa9d1fbfbbf32a61515 "pdflatex"
+  "paper.aux" 1766315470.74395 5803 ad365f7209644f0e58960e9ce2306262 "pdflatex"
+  "paper.out" 1766315470.74495 2724 3827d905d6302e790984f7122fedb921 "pdflatex"
   "paper.tex" 1766312817.51299 4845 a44fd29a94fd3f394ac7536931f0c0c1 ""
   (generated)
   "paper.aux"

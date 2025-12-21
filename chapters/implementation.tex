@@ -50,3 +50,54 @@ To calculate the convolution of a block of size $n$ by $n$ pixels, we need the s
     \caption{Pixels to calculate (blue) and apron (grey)}
     \label{fig:pixel_block_size}
 \end{figure}
+
+\subsection{Video Pipeline}
+
+The idea to be able to showcase the co-processor was to display the unprocessed and processed images on a screen with timing information using VGA. This was implemented using existing Vivado AXI periherial IPs shown in figure \Cref{fig:video-pipeline}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/Video_pipeline_architecture.png}
+    \caption{Video Pipeline Overview}
+    \label{fig:video-pipeline}
+\end{figure}
+
+We can see three blocks. 
+
+\subsubsection{Video Timing Controller}
+
+To generate a 640x480p video signal at 60\,Hz, a pixel clock of 25.175\,MHz is required according to the VGA timing specification. This clock determines the rate at which individual pixels are transmitted. Each clock cycle corresponds to one pixel period, including both the active video region and the blanking intervals.
+
+Following the specifications the following parameters where set in the controller seen in \Cref{tab:vga_timing}.
+
+\begin{table}[h]
+\centering
+\caption{VGA 640×480 @ 60\,Hz Timing Parameters}
+\label{tab:vga_timing}
+\begin{tabular}{lcc}
+\hline
+\textbf{Parameter} & \textbf{Horizontal (pixels)} & \textbf{Vertical (lines)} \\
+\hline
+Active video area & 640 & 480 \\
+Front porch & 16 & 10 \\
+Sync pulse width & 96 & 2 \\
+Back porch & 48 & 33 \\
+\hline
+Total & 800 & 525 \\
+\hline
+\end{tabular}
+\end{table}
+
+In practice the pixel clock of 25.175\,MHz is not achivable exact but a clock of 25\,MHz was used and gives a small deviation in refresh rate. But this is all within the tolerance of standard VGA monitors.
+
+\subsubsection{AXI Video Direct Memory Access}
+
+To reduce the processing load on the CPU, an AXI Video Direct Memory Access (VDMA) controller is used to transfer video data directly between the DDR3 memory and the video pipeline. By offloading continuous frame transfers to dedicated hardware, the CPU remains available for higher-level control tasks.
+
+The VDMA was configured to operate in memory-to-stream mode using three frame buffers. This multi-buffering scheme allows one frame to be displayed while another is being prepared or updated, reducing the risk of visual artifacts such as tearing. The controller is configured via software by providing the base addresses of the frame buffers loacated in DDR3 memory.
+
+Once initialized, the VDMA autonomously handles the read transactions on the AXI bus and streams pixels data into the AXI-stream to Video out controller.
+
+\subsubsection{AXI-Stream To Video Out}
+
+The AXI-Stream To Video Out controller takes in the Video Timing signals and the stream from the VDMA Controller and synchronises these to output the correct VGA timing signals and pixels.

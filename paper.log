@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.24)  21 DEC 2025 11:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.24)  21 DEC 2025 12:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -579,24 +579,24 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 5.
 ) (./chapters/implementation.tex
-<images/Interconnect_architecture.png, id=59, 1082.0425pt x 665.48625pt>
+<images/Interconnect_architecture.png, id=75, 1082.0425pt x 665.48625pt>
 File: images/Interconnect_architecture.png Graphic file (type png)
 <use images/Interconnect_architecture.png>
 Package pdftex.def Info: images/Interconnect_architecture.png  used on input line 7.
 (pdftex.def)             Requested size: 224.06393pt x 137.80656pt.
 
 
-<images/convolution_unit_mcu.png, id=63, 1122.44344pt x 415.5525pt>
+<images/convolution_unit_mcu.png, id=79, 1122.44344pt x 415.5525pt>
 File: images/convolution_unit_mcu.png Graphic file (type png)
 <use images/convolution_unit_mcu.png>
 Package pdftex.def Info: images/convolution_unit_mcu.png  used on input line 25.
 (pdftex.def)             Requested size: 224.06393pt x 82.9505pt.
-<images/screenshot_pixel_block_size.png, id=65, 343.2825pt x 413.29407pt>
+<images/screenshot_pixel_block_size.png, id=81, 343.2825pt x 413.29407pt>
 File: images/screenshot_pixel_block_size.png Graphic file (type png)
 <use images/screenshot_pixel_block_size.png>
 Package pdftex.def Info: images/screenshot_pixel_block_size.png  used on input line 49.
 (pdftex.def)             Requested size: 74.68544pt x 89.91595pt.
-) (./chapters/performance_analysis.tex
+
 Underfull \vbox (badness 6477) has occurred while \output is active []
 
 
@@ -604,18 +604,30 @@ Underfull \vbox (badness 6477) has occurred while \output is active []
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
- <./images/Interconnect_architecture.png> <./images/convolution_unit_mcu.png>] (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-)
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 21.
- (/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+ <./images/Interconnect_architecture.png> <./images/convolution_unit_mcu.png>]
+<images/Video_pipeline_architecture.png, id=106, 1266.7325pt x 443.6575pt>
+File: images/Video_pipeline_architecture.png Graphic file (type png)
+<use images/Video_pipeline_architecture.png>
+Package pdftex.def Info: images/Video_pipeline_architecture.png  used on input line 60.
+(pdftex.def)             Requested size: 248.96162pt x 87.1932pt.
+
+Overfull \hbox (7.11319pt too wide) in paragraph at lines 60--61
+ [][] 
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 75.
+(/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 59.
+(Font)              <8> on input line 77.
+) (./chapters/performance_analysis.tex
 
+(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
 
-) (./chapters/conclusion.tex) (./chapters/future_work.tex)
+[2 <./images/screenshot_pixel_block_size.png> <./images/Video_pipeline_architecture.png>]) (./chapters/conclusion.tex) (./chapters/future_work.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 128--132
 []\T1/ptm/m/n/8 (+20) Digilent, \T1/ptm/m/it/8 (+20) Zed-Board User's Guide\T1/ptm/m/n/8 (+20) , 2014. Avail-able:
  []
@@ -626,8 +638,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--132
  []
 
 
-
-[2 <./images/screenshot_pixel_block_size.png>]
 Underfull \hbox (badness 5817) in paragraph at lines 140--144
 []\T1/ptm/m/n/8 (+20) AMD, \T1/ptm/m/it/8 (+20) Zynq 7000 SoC Tech-ni-cal Ref-er-ence Man-ual\T1/ptm/m/n/8 (+20) , 2023.
  []
@@ -664,21 +674,21 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: C4379F6891358FA9D1FBFBBF32A61515;1982.
+(rerunfilecheck)             Checksum: 3827D905D6302E790984F7122FEDB921;2724.
  ) 
 Here is how much of TeX's memory you used:
- 21926 strings out of 475171
- 421432 string characters out of 5767094
- 1006749 words of memory out of 5000000
- 44481 multiletter control sequences out of 15000+600000
- 679688 words of font info for 251 fonts, out of 8000000 for 9000
+ 21969 strings out of 475171
+ 422256 string characters out of 5767094
+ 1010023 words of memory out of 5000000
+ 44501 multiletter control sequences out of 15000+600000
+ 682547 words of font info for 261 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,9n,83p,1056b,1440s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,9n,83p,1056b,1248s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (3 pages, 288555 bytes).
+Output written on paper.pdf (3 pages, 345119 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
- 155 compressed objects within 2 object streams
- 44 named destinations out of 1000 (max. 500000)
- 53376 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 213 PDF objects out of 1000 (max. 8388607)
+ 176 compressed objects within 2 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 59557 words of extra memory for PDF output out of 61914 (max. 10000000)
 
