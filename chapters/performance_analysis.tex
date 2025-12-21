@@ -35,7 +35,7 @@ In our parallel implementation, we have an initial three line buffers that need 
 
 Processing the image by splitting it into four quadrants, we get an additional speedup of 4x. % Or 400\%? But just saying "400\%" is ambiguous: is it x*400% or x+400%*x?
 
-TODO: how did you get to 112x speedup?
+When we look at our co-processor architectural implementation, we only need 1 cycle/pixel after the initial latency for filling the buffers and the data going trough the pipeline. So our implementation already has an architectural speedup of 28-33X, when also taking into account that we split the image in four we can multiply this speedup buy four and have a total architectural speedup of 112-132X.
 
 However, the speedup is limited by the speed of AXI.
 
