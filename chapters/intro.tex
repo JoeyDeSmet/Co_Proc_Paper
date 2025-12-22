@@ -7,7 +7,7 @@ If a CPU has to do all this sequentially, it would struggle to get real-time per
 Instead, you can offload this work to a co-processor, that will process an image in parallel. This makes the whole system faster, and the CPU has time to do other work.
 
 
-In image processing, a kernel is a small matrix that can be used to add an effect to an image, by convoluting the kernel over the image. Different kernels achieve different tasks, like blurring, sharpening, embossing\dots  The output of a pixel $A$ does not have any effect on a different pixel $B$, meaning we can fully parallelize the process.
+In image processing, a kernel is a small matrix that can be used to add an effect to an image, by convoluting the kernel over the image. Different kernels achieve different tasks, like blurring, sharpening, embossing\dots \cite{wikipedia_kernel_image_processing}. The output of a pixel $A$ does not have any effect on a different pixel $B$, meaning we can fully parallelize the process.
 
 
 
