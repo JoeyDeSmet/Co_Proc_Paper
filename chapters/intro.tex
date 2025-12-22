@@ -8,3 +8,11 @@ Instead, you can offload this work to a co-processor, that will process an image
 
 
 In image processing, a kernel is a small matrix that can be used to add an effect to an image, by convoluting the kernel over the image. Different kernels achieve different tasks, like blurring, sharpening, embossing\dots  The output of a pixel $A$ does not have any effect on a different pixel $B$, meaning we can fully parallelize the process.
+
+
+
+\section{Literature study}
+
+To implement the design, we first looked into how generic GPU programming is done. In \cite{nvidia_cuda_image_processing_2008}, a kernel image processor is implemented in CUDA. In this example, the image is split into blocks and given to a number of GPU cores. Each multiprocessor has access to a 16 kB ultra-fast shared memory, allowing it to store $64 \times 64$ pixels, with 4 bytes per pixel. Those $64 \times 64$, after its loaded in from global memory, can then be processed in parallel.
+
+In this paper, a hardware version of the algorithm described in \cite{nvidia_cuda_image_processing_2008} is implemented.
