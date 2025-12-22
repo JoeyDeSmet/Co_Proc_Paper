@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1766398819.61952 "/home/kit/Documents/KUL/Master/Labos/Computerarchitecturen/Co_Proc_Paper/paper.tex" "paper.pdf" "paper" 1766398820.77459 0
+["pdflatex"] 1766408407.96598 "/home/kit/Documents/KUL/Master/Labos/Computerarchitecturen/Co_Proc_Paper/paper.tex" "paper.pdf" "paper" 1766408409.30481 0
   "/home/kit/Documents/KUL/Master/Labos/Computerarchitecturen/Co_Proc_Paper/paper.tex" 1766398683.79154 5380 eb0466f76f5c8e87b78dce31a3798d61 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1764115200 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -240,7 +240,7 @@
   "chapters/future_work.tex" 1766240883.70097 582 78bf4ffd897ac38bd130526ba4a95c60 ""
   "chapters/implementation.tex" 1766398159.61331 6480 b6b1fe43969c38781618bc032fa18f4b ""
   "chapters/intro.tex" 1766397133.28711 1832 1b248b0111e77fe461728d8aaec430e3 ""
-  "chapters/performance_analysis.tex" 1766398819.42599 5547 baae2fbd30c65e90e5e75fab63267691 ""
+  "chapters/performance_analysis.tex" 1766408407.75117 5472 a57f6abba15dc87a4f7b7201e97fe067 ""
   "images/Interconnect_architecture.png" 1765875262.59588 46160 02f690f52b389b865d726d3c691df5f7 ""
   "images/Video_pipeline_architecture.png" 1765875262.59687 72445 b6d3c09b93b54fbe882cf231bbb09841 ""
   "images/convolution_unit_mcu.png" 1765921864.33784 102159 84be3001e241b2f60524794cc988c3aa ""
@@ -248,8 +248,8 @@
   "paper-figure0.dpth" 1766398161.47197 0 d41d8cd98f00b204e9800998ecf8427e ""
   "paper-figure0.md5" 1766398160.73429 62 baac41e675ca88baf069ba9c3a0cf61e ""
   "paper-figure0.pdf" 1766398161.75398 32046 cef7bfefe9296327c9f0a9c0de7abf61 ""
-  "paper.aux" 1766398820.67234 6904 28b26d5dcdc7f52a71470c3e67800d76 "pdflatex"
-  "paper.out" 1766398820.67234 2851 2d238789d86a443c04c7a9cdfe154eee "pdflatex"
+  "paper.aux" 1766408409.18719 6904 28b26d5dcdc7f52a71470c3e67800d76 "pdflatex"
+  "paper.out" 1766408409.18819 2851 2d238789d86a443c04c7a9cdfe154eee "pdflatex"
   "paper.tex" 1766398683.79154 5380 eb0466f76f5c8e87b78dce31a3798d61 ""
   (generated)
   "paper.aux"
