@@ -44,9 +44,11 @@ However, the speedup is limited by the speed of AXI.
 \end{equation}
 
 The latency $T_\text{latency}$ of the co-processor is measured as the time between issuing a convolution request and receiving the processed data:
-\begin{equation}
-T_\text{latency} = T_\text{transfer} + T_\text{compute} + T_\text{response}
-\end{equation}
+\begin{align}
+  T_\text{latency} &= T_\text{transfer} + T_\text{compute} + T_\text{response} \\
+    &= (640 \cdot 3+3) + (640) + (640) \\
+    &= 3203~\text{clock cycles}
+\end{align}
 
 Throughput $R_\text{throughput}$ is calculated as:
 \begin{equation}
