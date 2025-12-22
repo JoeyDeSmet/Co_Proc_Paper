@@ -42,7 +42,7 @@ The convolution unit RTL module exposes inputs for the kernel coefficients, and 
 
 \subsection{Effect of block size}
 
-To calculate the convolution of a block of size $n$ by $n$ pixels, we need the surrounding pixels as well, as shown in \Cref{fig:pixel_block_size}. To calculate the convolution for the $n^2$ pixels, we need to fetch $(n+2)^2$ pixels, making the efficiency $\eta = \frac{n^2}{(n+1)^2}$. For low block sizes, there are a lot of pixels that overlap between adjacent blocks, resulting in wasted re-fetching. However, larger block sizes mean less parallelism, resulting in a slower system.
+To calculate the convolution of a block of size $n$ by $n$ pixels, we need the surrounding pixels as well, as shown in \Cref{fig:pixel_block_size}. To calculate the convolution for the $n^2$ pixels, we need to fetch $(n+2)^2$ pixels, making the efficiency $\eta = \frac{n^2}{(n+1)^2}$. A plot of this function is shown in \Cref{fig:effect_of_block_size_graph}. For low block sizes, there are a lot of pixels that overlap between adjacent blocks, resulting in wasted re-fetching. However, larger block sizes mean less parallelism, resulting in a slower system.
 
 \begin{figure}[H]
     \centering
@@ -50,6 +50,29 @@ To calculate the convolution of a block of size $n$ by $n$ pixels, we need the s
     \caption{Pixels to calculate (blue) and apron (grey)}
     \label{fig:pixel_block_size}
 \end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            title={Efficiency versus block size},
+            axis lines = left,
+            xlabel = \(n\),
+            ylabel = {\(\eta\)},
+        ]
+            \addplot [
+                domain=0:20, 
+                samples=100, 
+                color=red,
+            ]
+            {x^2 / ((x+2)^2)};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Efficiency versus block size}
+    \label{fig:effect_of_block_size_graph}
+\end{figure}
+
+
 
 \subsection{Video Pipeline}
 

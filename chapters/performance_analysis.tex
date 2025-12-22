@@ -96,6 +96,8 @@ LUTRAM & 8 \\
 \label{tab:resource-util}
 \end{table}
 
+Additionally, the convolution unit has a worst negative slack of 4,363 ns, well within the constraints for a 100 MHz FPGA clock speed.
+
 \subsection{Comparison with CPU Implementation}
 
 For reference, a CPU-only implementation, as a FreeRTOS task with highest priority, was run on the ARM Cortex-A9 core. Table~\ref{tab:cpu-vs-fpga} summarizes the speed-up achieved:
