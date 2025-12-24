@@ -15,20 +15,22 @@ The experiments were performed on a Digilent ZedBoard development board with the
 
 \subsection{Latency and Throughput}
 
-For this performance analysis, we'll compare the co-processor speed to a naïve sequential algorithm on a CPU. This algorithm is shown in \Cref{lst:convolution_sequential}.
-
-\begin{lstlisting}[language=Python,label=lst:convolution_sequential]
-  for y from 1 to H-2:
-    for x from 1 to W-2:
-      acc = 0
-      # Convolute current pixel with kernel
-      for ky from -1 to +1:
-        for kx from -1 to +1:
-          acc += img[y + ky][x + kx] \
-            * K[ky + 1][kx + 1]
-      out[y][x] = acc
+For this performance analysis, we'll compare the co-processor speed to a naïve sequential algorithm on a CPU. This algorithm is shown in \Cref{fig:convolution_sequential}.
+\begin{figure}[H]
+\begin{lstlisting}[language=Python]
+for y from 1 to H-2:
+  for x from 1 to W-2:
+    acc = 0
+    # Convolute current pixel with kernel
+    for ky from -1 to +1:
+      for kx from -1 to +1:
+        acc += img[y + ky][x + kx] \
+          * K[ky + 1][kx + 1]
+    out[y][x] = acc
 \end{lstlisting}
-
+\caption{Implementation of the sequential convolution algorithm}
+\label{fig:convolution_sequential}
+\end{figure}
 In the naïve implementation, we need 9 multiplications and 9 additions per pixel. Taking one cycle per addition, one cycle per multiplication, and 10 to 15 cycles for the loop logic and memory, we need about 28 to 33 cycles/pixel in the sequential example.
 
 In our parallel implementation, we have an initial three line buffers that need to be filled first (taking 640 cycles each), and an additional three cycles to load the needed data into the convolution unit. After this first delay, we can process pixels at a rate of 1 cycle/pixel.
@@ -43,30 +45,33 @@ However, the speedup is limited by the speed of AXI.
   T_{AXI} = 2 \cdot \frac{N_{pixels}}{\mathrm{pixels\_per\_AXI\_cycle} \cdot f_{AXI}}
 \end{equation}
 
+If this were a real GPU-like system, we would expect a needed data rate of $1920 \cdot 1080~\mathrm{pixels/frame} \cdot 32~\mathrm{bits/pixel} \cdot 60~\mathrm{frames/second} = 497.7~\mathrm{MB/s}$ (!).
+
 The latency $T_\text{latency}$ of the co-processor is measured as the time between issuing a convolution request and receiving the processed data:
-\begin{align}
-  T_\text{latency} &= (640 \cdot 3+3) \\
+\begin{align*}
+  T_\text{latency} &= 640 \cdot 3+3 \\
     &= 1923~\text{clock cycles}
-\end{align}
+\end{align*}
 
 % Throughput $R_\text{throughput}$ is calculated as:
 % \begin{equation}
 % R_\text{throughput} = \frac{\text{Number of pixels processed}}{T_\text{latency}}
 % \end{equation}
 
-\begin{table}[H]
-\centering
-\caption{Latency and throughput for processing new versus in-memory images}
-\begin{tabular}{c c c}
-\hline
-In memory & Latency [ms] & Throughput [MPix/s] \\
-\hline
-No & -- & -- \\
-Yes & -- & -- \\
-\hline
-\end{tabular}
-\label{tab:latency-throughput}
-\end{table}
+% TODO: what's this supposed to be?
+% \begin{table}[H]
+% \centering
+% \caption{Latency and throughput for processing new versus in-memory images}
+% \begin{tabular}{c c c}
+% \hline
+% In memory & Latency [ms] & Throughput [MPix/s] \\
+% \hline
+% No & -- & -- \\
+% Yes & -- & -- \\
+% \hline
+% \end{tabular}
+% \label{tab:latency-throughput}
+% \end{table}
 
 \subsection{Resource Utilization}
 
@@ -101,42 +106,46 @@ Additionally, the convolution unit has a worst negative slack of 4,363 ns, well 
 
 \subsection{Comparison with CPU Implementation}
 
-For reference, a CPU-only implementation, as a FreeRTOS task with highest priority, was run on the ARM Cortex-A9 core. Table~\ref{tab:cpu-vs-fpga} summarizes the speed-up achieved:
+For reference, we would've liked to run a CPU-only implementation, but due to time constraints this hasn't happened. Instead, this was done theoretically (see \Cref{fig:convolution_sequential}). There, we assumed 10 to 15 cycles needed for memory access and the loop logic. A summary of these findings is shown in \Cref{tab:cpu-vs-fpga}.
 
 \begin{table}[H]
 \centering
 \caption{Speed-Up of FPGA Co-Processor vs CPU}
-\begin{tabular}{c c}
+\begin{tabular}{lll}
 \hline
-CPU Latency [ms] & FPGA Speed-Up \\
-\hline
--- & -- \\
-\hline
+     & Latency (cycles) & Throughput (max, cycles/pixel) \\ \hline 
+CPU  & 15               & 33                             \\
+FPGA & 1923             & 1                              \\ \hline
 \end{tabular}
 \label{tab:cpu-vs-fpga}
 \end{table}
 
-% If possible and if we have time enough
-\subsection{Energy Efficiency}
+For the sequential algorithm, processing a 640 $\times$ 480 pixel image, we would expect it to take $15 + 33 \cdot 640 \cdot 480 = 10137615$ cycles. Compared to the FPGA, where the image is split into four blocks that's processed in parallel, meaning we would expect $1923 + 1 \cdot 640 \cdot 480 \cdot \frac{1}{4} = 78723$ cycles, which is still significantly faster ($128.8\times$). Off course, the clock speed of these implementations will be different, resulting in a slightly different outcome.
 
-Energy consumption was measured for the convolution co-processor using onboard power monitoring or external measurement tools. The energy efficiency $\eta$ is defined as the number of pixels processed per joule of energy consumed:
+The clock speed of the CPU is set at 667 MHz, while the FPGA is at 100 MHz. Still, the theoretical speedup of the parallel algorithm significantly outweighs this difference.
 
-\begin{equation}
-\eta = \frac{\text{Number of pixels processed}}{E_\text{total}} \quad [\text{MPixels/J}]
-\end{equation}
+% TODO: remove this? just don't care about energy efficiency?
+% % If possible and if we have time enough
+% \subsection{Energy Efficiency}
 
-where $E_\text{total}$ is the total energy consumed during the convolution operation.
+% Energy consumption was measured for the convolution co-processor using onboard power monitoring or external measurement tools. The energy efficiency $\eta$ is defined as the number of pixels processed per joule of energy consumed:
 
-\begin{table}[H]
-\centering
-\caption{Energy efficiency of the co-processor for CPU and FPGA}
-\begin{tabular}{c c c}
-\hline
-Platform & Energy [mJ] & Efficiency [MPix/J] \\
-\hline
-$FPGA$ & -- & -- \\
-$CPU$ & -- & -- \\
-\hline
-\end{tabular}
-\label{tab:energy-efficiency}
-\end{table}
+% \begin{equation}
+% \eta = \frac{\text{Number of pixels processed}}{E_\text{total}} \quad [\text{MPixels/J}]
+% \end{equation}
+
+% where $E_\text{total}$ is the total energy consumed during the convolution operation.
+
+% \begin{table}[H]
+% \centering
+% \caption{Energy efficiency of the co-processor for CPU and FPGA}
+% \begin{tabular}{c c c}
+% \hline
+% Platform & Energy [mJ] & Efficiency [MPix/J] \\
+% \hline
+% $FPGA$ & -- & -- \\
+% $CPU$ & -- & -- \\
+% \hline
+% \end{tabular}
+% \label{tab:energy-efficiency}
+% \end{table}
