@@ -1200,7 +1200,17 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmb8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT ./images/architectural speedup vs PL frequency.png
+INPUT ./images/architectural speedup vs PL frequency.png
+INPUT images/architectural speedup vs PL frequency.png
+INPUT ./images/architectural speedup vs PL frequency.png
+INPUT ./images/architectural speedup vs PL frequency.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
+INPUT ./images/AXI limited speedup.png
+INPUT ./images/AXI limited speedup.png
+INPUT images/AXI limited speedup.png
+INPUT ./images/AXI limited speedup.png
+INPUT ./images/AXI limited speedup.png
 INPUT ./chapters/conclusion.tex
 INPUT chapters/conclusion.tex
 INPUT ./chapters/conclusion.tex

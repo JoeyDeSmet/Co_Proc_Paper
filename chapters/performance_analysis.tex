@@ -39,11 +39,29 @@ Processing the image by splitting it into four quadrants, we get an additional s
 
 When we look at our co-processor architectural implementation, we only need 1 cycle/pixel after the initial latency for filling the buffers and the data going trough the pipeline. So our implementation already has an architectural speedup of 28-33X, when also taking into account that we split the image in four we can multiply this speedup buy four and have a total architectural speedup of 112-132X.
 
-However, the speedup is limited by the speed of AXI.
+This speedup would theoretically scale linearly with the clock speed, as shown in \Cref{fig:architectural_speedup}.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.45\textwidth]{images/architectural speedup vs PL frequency.png}
+  \caption{Theoretical architectural speedup}
+  \label{fig:architectural_speedup}
+\end{figure}
+
+However, the speedup is limited by the speed of AXI.
 \begin{equation}
   T_{AXI} = 2 \cdot \frac{N_{pixels}}{\mathrm{pixels\_per\_AXI\_cycle} \cdot f_{AXI}}
+  \label{eq:AXI_limited}
 \end{equation}
+
+In \Cref{fig:AXI_limited_speed_graph}, it's possible to see that AXI limits the system to around 2.2$\times$ speedup, even with very high clock speeds.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.45\textwidth]{images/AXI limited speedup.png}
+  \caption{Plot of \Cref{eq:AXI_limited}; speedup is limited by AXI}
+  \label{fig:AXI_limited_speed_graph}
+\end{figure}
 
 If this were a real GPU-like system, we would expect a needed data rate of $1920 \cdot 1080~\mathrm{pixels/frame} \cdot 32~\mathrm{bits/pixel} \cdot 60~\mathrm{frames/second} = 497.7~\mathrm{MB/s}$ (!).
 
